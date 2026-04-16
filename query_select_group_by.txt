@@ -4,4 +4,9 @@
   FROM students
   GROUP BY YEAR(students.enrolment_date);
 
+-- 2. Contare gli insegnanti che hanno l'ufficio nello stesso edificio
 
+	SELECT teachers.office_address AS building_address, (COUNT(teachers.id)) AS tot_teachers
+	FROM teachers
+  GROUP BY building_address
+  ORDER BY building_address;
