@@ -10,3 +10,18 @@
 	FROM teachers
   GROUP BY building_address
   ORDER BY building_address;
+
+-- 3. Calcolare la media dei voti di ogni appello d'esame
+
+	SELECT courses.name AS course_name, exams.date AS exam_date, exams.id AS exam_id, (FLOOR(AVG(exam_student.vote))) AS votes_avg
+  FROM exam_student
+  INNER JOIN exams ON exams.id = exam_student.exam_id
+  INNER JOIN courses ON courses.id = exams.course_id
+  GROUP BY exams.id;
+
+-- 4. Contare quanti corsi di laurea ci sono per ogni dipartimento
+
+	SELECT departments.name AS department_name, (COUNT(degrees.id)) AS department_degrees
+  FROM degrees
+  INNER JOIN departments ON departments.id = degrees.department_id
+  GROUP BY department_id;
