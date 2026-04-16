@@ -21,7 +21,7 @@
     courses.name AS course_name, 
     exams.date AS exam_date, 
     exams.id AS exam_id, 
-    (FLOOR(AVG(exam_student.vote))) AS votes_avg
+    (ROUND(AVG(exam_student.vote))) AS votes_avg
   FROM exam_student
   INNER JOIN exams ON exams.id = exam_student.exam_id
   INNER JOIN courses ON courses.id = exams.course_id
