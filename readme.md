@@ -1,4 +1,4 @@
-14-15 / /04 / 26  -  Esercizio di oggi:
+14-15-16 / /04 / 26  -  Esercizio di oggi:
 # DB University
 nome repo: `db-university`
 
@@ -23,3 +23,6 @@ Dopo aver creato un nuovo database nel vostro MySQL Workbench e aver importato l
 
 **Cosa consegnare?**
 <br>Dopo aver testato le vostre query con MySQL Workbench, riportatele in un file txt e caricatelo nella vostra repo.
+
+## Giorno 3
+Caricate un secondo file nella stessa repo di ieri (`db-university`) con le query di oggi.
