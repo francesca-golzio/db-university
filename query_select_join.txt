@@ -63,3 +63,17 @@
 	INNER JOIN exams ON exams.id = exam_student.exam_id
 	INNER JOIN courses ON courses.id = exams.course_id
   GROUP BY student_surname, student_name, course_name;
+
+-- 7.bis BONUS: Successivamente, filtrare i tentativi con voto minimo 18.
+	SELECT 
+    students.surname AS student_surname, 
+    students.name AS student_name, 
+    courses.name AS course_name, 
+    (COUNT(exam_student.vote)) AS enrollments_n, 
+    (MAX(exam_student.vote)) AS highest_vote
+  FROM exam_student
+  INNER JOIN students ON students.id = exam_student.student_id
+	INNER JOIN exams ON exams.id = exam_student.exam_id
+	INNER JOIN courses ON courses.id = exams.course_id
+  GROUP BY students.surname, students.name, courses.name 
+  HAVING highest_vote >= 18;
