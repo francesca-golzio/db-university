@@ -1,0 +1,7 @@
+-- 1. Contare quanti iscritti ci sono stati ogni anno
+
+	SELECT (YEAR(students.enrolment_date)) AS enrolment_year, (COUNT(YEAR(students.enrolment_date))) AS tot_students
+  FROM students
+  GROUP BY YEAR(students.enrolment_date);
+
+
